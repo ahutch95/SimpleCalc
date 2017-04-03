@@ -8,17 +8,40 @@
 
 import Foundation
 
-print("Hello, World!")
-
 print("Enter an expression seperated by returns:")
 
-while true {
+var finished = false;
+
+while finished != true {
     
     let response = UInt( readLine(strippingNewline: true)! )
+    let response2 = String( readLine(strippingNewline: true)! )
+    let response3 = UInt( readLine(strippingNewline: true)! )
     
+    if response2 == "+"  {
+        let result = response! + response3!
+        print("Result: \(result)")
+    } else if response2 == "-" {
+        let result = response! - response3!
+        print("Result: \(result)")
+    } else if response2 == "*" {
+        let result = response! * response3!
+        print("Result: \(result)")
+    } else if response2 == "/" {
+        let result = response! / response3!
+        print("Result: \(result)")
+    } else if response2 == "%" {
+        let result = response! % response3!
+        print("Result: \(result)")
+    } else {
+        print("That is not a supported opperand. Please try again with these options (+, -, *, /, %, count, avg, fact)")
+    }
+
+}
+
+/*
     if response != nil {
         print("You just entered \(response!)")
     } else {
         print("You didn't enter a valid number. Try again.")
-    }
-}
+    }*/
