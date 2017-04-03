@@ -14,27 +14,51 @@ var finished = false;
 
 while finished != true {
     
-    let response = Double( readLine(strippingNewline: true)! )
-    let response2 = String( readLine(strippingNewline: true)! )
-    let response3 = Double( readLine(strippingNewline: true)! )
+    let response = String( readLine(strippingNewline: true)! )
     
-    if response2 == "+"  {
-        let result = response! + response3!
-        print("Result: \(result)")
-    } else if response2 == "-" {
-        let result = response! - response3!
-        print("Result: \(result)")
-    } else if response2 == "*" {
-        let result = response! * response3!
-        print("Result: \(result)")
-    } else if response2 == "/" {
-        let result = response! / response3!
-        print("Result: \(result)")
-    } else if response2 == "%" {
-        let result = response!.truncatingRemainder(dividingBy: response3!)
-        print("Result: \(result)")
+    if response!.contains("count"){
+        var intList = response?.components(separatedBy: " ")
+        print(intList!.count - 1)
+        
+    } else if response!.contains("avg") {
+        var intList = response?.components(separatedBy: " ")
+        var junk = intList!.popLast()
+        var sum = 0;
+        for i in 0...intList!.count - 1{
+            sum += Int(intList![i])!
+        }
+        print(sum / intList!.count)
+        
+    } else if response!.contains("fact") {
+        var intList = response?.components(separatedBy: " ")
+        var factorial = 1;
+        for i in 1...Int(intList![0])!{
+            factorial *= i
+        }
+        print(factorial)
+        
     } else {
-        print("That is not a supported opperand. Please try again with these options (+, -, *, /, %, count, avg, fact)")
+        let response2 = String( readLine(strippingNewline: true)! )
+        let response3 = Double( readLine(strippingNewline: true)! )
+        
+        if response2 == "+"  {
+            let result = Double(response!)! + response3!
+            print("Result: \(result)")
+        } else if response2 == "-" {
+            let result = Double(response!)! - response3!
+            print("Result: \(result)")
+        } else if response2 == "*" {
+            let result = Double(response!)! * response3!
+            print("Result: \(result)")
+        } else if response2 == "/" {
+            let result = Double(response!)! / response3!
+            print("Result: \(result)")
+        } else if response2 == "%" {
+            let result = Double(response!)!.truncatingRemainder(dividingBy: response3!)
+            print("Result: \(result)")
+        } else {
+            print("That is not a supported opperand. Please try again with these options (+, -, *, /, %, count, avg, fact)")
+        }
     }
 
 }
