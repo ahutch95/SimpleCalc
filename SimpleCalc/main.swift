@@ -18,7 +18,7 @@ while finished != true {
     
     if response!.contains("count"){
         var intList = response?.components(separatedBy: " ")
-        print(intList!.count - 1)
+        print("Result: \(intList!.count - 1)")
         
     } else if response!.contains("avg") {
         var intList = response?.components(separatedBy: " ")
@@ -27,7 +27,7 @@ while finished != true {
         for i in 0...intList!.count - 1{
             sum += Int(intList![i])!
         }
-        print(sum / intList!.count)
+        print("Result: \(Double(sum) / Double(intList!.count))")
         
     } else if response!.contains("fact") {
         var intList = response?.components(separatedBy: " ")
@@ -35,7 +35,7 @@ while finished != true {
         for i in 1...Int(intList![0])!{
             factorial *= i
         }
-        print(factorial)
+        print("Result: \(factorial)")
         
     } else {
         let response2 = String( readLine(strippingNewline: true)! )
