@@ -57,7 +57,7 @@ while finished != true {
             let result = Double(response!)!.truncatingRemainder(dividingBy: response3!)
             print("Result: \(result)")
         } else {
-            print("That is not a supported opperand. Please try again with these options (+, -, *, /, %, count, avg, fact)")
+            print("That is not a supported operand. Please try again with these options (+, -, *, /, %, count, avg, fact)")
         }
     }
 
