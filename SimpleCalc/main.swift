@@ -14,9 +14,9 @@ var finished = false;
 
 while finished != true {
     
-    let response = UInt( readLine(strippingNewline: true)! )
+    let response = Double( readLine(strippingNewline: true)! )
     let response2 = String( readLine(strippingNewline: true)! )
-    let response3 = UInt( readLine(strippingNewline: true)! )
+    let response3 = Double( readLine(strippingNewline: true)! )
     
     if response2 == "+"  {
         let result = response! + response3!
@@ -31,7 +31,7 @@ while finished != true {
         let result = response! / response3!
         print("Result: \(result)")
     } else if response2 == "%" {
-        let result = response! % response3!
+        let result = response!.truncatingRemainder(dividingBy: response3!)
         print("Result: \(result)")
     } else {
         print("That is not a supported opperand. Please try again with these options (+, -, *, /, %, count, avg, fact)")
